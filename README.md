@@ -24,7 +24,7 @@ The following section describes all datapoints supported by the current version 
   Example: `$POV,S,123.45*05`
 
 ### Humidity
-* `H`: relative humidity in percent
+* `H`: relative humidity in `%`
   Example: `$POV,H,58.42*24`
 
 ### Pressure
@@ -40,10 +40,10 @@ The following section describes all datapoints supported by the current version 
 
 ### Temperature
 
-* `T`: temperature in °C  
+* `T`: temperature in `°C`  
   Example: `$POV,T,23.52*35`
 
 ### Vario
 
-* `E`: TE vario in m/s  
+* `E`: TE vario in `m/s` 
   Example: `$POV,E,2.15*14`
