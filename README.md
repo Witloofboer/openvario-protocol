@@ -47,3 +47,11 @@ The following section describes all datapoints supported by the current version 
 
 * `E`: TE vario in `m/s` 
   Example: `$POV,E,2.15*14`
+  
+### Wind
+
+* `W`: Wind speed in `m/s`  
+  Example: `$POV,W,10.0*01`
+
+* `D`: Wind direction (true) in `°`  
+  Example: `$POV,D,243*38`
