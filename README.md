@@ -24,7 +24,7 @@ The following section describes all datapoints supported by the current version 
   Example: `$POV,S,123.45*05`
 
 ### Humidity
-* `H`: relative humidity in `%`
+* `H`: relative humidity in `%`  
   Example: `$POV,H,58.42*24`
 
 ### Pressure
@@ -45,7 +45,7 @@ The following section describes all datapoints supported by the current version 
 
 ### Vario
 
-* `E`: TE vario in `m/s` 
+* `E`: TE vario in `m/s`  
   Example: `$POV,E,2.15*14`
   
 ### Wind
@@ -66,13 +66,13 @@ The following section describes all datapoints supported by the current version 
 
 All attitude references are given with regard to a moving coordinate system that is attached to the glider, parallel to the earth's surface and with the ...-axis pointing in the direction of the horizontal movement.
 
-* `A_`: Real quaternion (q0)
+* `A_`: Real quaternion (q0)  
   Example: `$POV,A_,1.000000*66`
 
-* `Ai`: i-quaternion (q1) 
+* `Ai`: i-quaternion (q1)  
   Example: `$POV,Ai,0.707123*26`
   
-* `Aj`: j-quaternion (q2) 
+* `Aj`: j-quaternion (q2)  
   Example: `$POV,POV,Aj,0.988650*76`
 
 * `Ak`: k-quaternion (q3)  
