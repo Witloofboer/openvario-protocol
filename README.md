@@ -50,8 +50,14 @@ The following section describes all datapoints supported by the current version 
   
 ### Wind
 
-* `W`: Wind speed in `m/s`  
-  Example: `$POV,W,10.0*01`
+* `Wis`: Instantaneous wind speed in `m/s`  
+  Example: `$POV,Wis,10.0*01`
 
-* `D`: Wind direction (true) in `°`  
-  Example: `$POV,D,243*38`
+* `Wid`: Instantaneous wind direction (true) in `°`  
+  Example: `$POV,Wid,243*38`
+  
+* `Was`: Average wind speed in `m/s`  
+  Example: `$POV,Was,10.0*01`
+
+* `Wad`: Average wind direction (true) in `°`  
+  Example: `$POV,Wav,243*38`
