@@ -2,15 +2,15 @@
 
 This document describes the OpenVario serial port protocol.
 
-**Version: 1.2-dev**
+**Version: 1.4-larus**
 
 ## Specification
 
 The OpenVario serial port protocol is built around the `$POV` NMEA sentence:
 
     $POV,<type>,<value>,<type>,<value>,...*<checksum>
-    
-A `$POV` sentence can contain multiple datapoints that are defined by `type` and `value`. The `type` part is a letter or number describing the type of the following value according to the following overview of supported types. The `value` part is a floating point number for all currently supported types of datapoints. Future versions of the protocol may support other value types too though.
+
+The NMEA sentence always starts with `$POV` and ends up with a `*` and a `checksum`. Each `$POV` sentence can contain multiple datapoints defined by `type` and `value`. The `type` part is an uppercase letter describing the type and meaning of the following `value` according to the overview of supported types below. The value is a floating point number. The length of the sentence is not fixed, but terminated with the usual asterisk and a two character checksum.
 
 The list of datapoints should be terminated with the usual asterisk and two character checksum.
 
@@ -79,3 +79,46 @@ All attitude references are given with regard to a moving coordinate system that
   
 * `Y`: Yaw angle referenced to the direction of motion in `degrees`  
   Example: `$POV,Y,-12.89*11`
+
+## Commands
+
+`C`: Command followed by type of command and parameter if necessary
+  Example: `C,<type>,<parameter>`
+  
+Commands are grouped in "Types":
+
+* Vario:  
+    `VU`: Volume of external vario up by 10%   
+    `VD`: Volume of external vario down by 10%  
+    `VM`: Mute external Vario  
+    Example: `$POV,C,VU*09` => Set up volume by 10%  
+    
+* McCready:  
+     `MC,<value>`  
+     Example: `$POV,C,MC,+0.5*28` => Set McCready to +0.5  
+     
+* Wing Load:  
+     `WL,<value>`  
+     `value` is a factor of the additional weight added by water ballast in relation to the reference weight of the glider  
+     Example: `$POV,C,WL,1.0*12` => No water ballast  
+              `$POV,C,WL,1.1*13` => 10% more weight than reference weight       
+   
+* Bugs:
+     `BU,<value>`  
+     `value` reflects the value of bugs  
+     Example: `$POV,C,BU,1.0*1E` => No Bugs  
+              `$POV,C,WL,0.5*16` => 50% Bugs      
+   
+* Real Polar:  
+     `RPO,<coff a>, <coff b>. <coff c>`  
+     `coff x` are reflecting the coefficients of the polar including bugs and ballast  
+     Example: 
+     
+* Ideal Polar:  
+     `IPO,<coff a>, <coff b>. <coff c>`  
+     `coff x` are reflecting the coefficients of the ideal polar (just glider, without bugs and ballast)  
+     Example:  
+     
+## Checksum
+
+The NMEA Checksum is calculated over the NMEA string between `$` and `*`. The checksum is a hexadecimal number representing the XOR of all bytes.
