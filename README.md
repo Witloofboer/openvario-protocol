@@ -43,6 +43,11 @@ The following section describes all datapoints supported by the current version 
 * `T`: temperature in `°C`  
   Example: `$POV,T,23.52*35`
 
+### Voltage
+
+* `V`: voltage in `volt`
+  Example: `$POV,V,12.3*01`
+
 ### Vario
 
 * `E`: TE vario in `m/s`  
