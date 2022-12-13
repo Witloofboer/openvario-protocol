@@ -45,7 +45,7 @@ The following section describes all datapoints supported by the current version 
 
 ### Voltage
 
-* `V`: voltage in `volt`
+* `V`: voltage in `volt`  
   Example: `$POV,V,12.3*01`
 
 ### Vario
