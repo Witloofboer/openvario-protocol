@@ -65,7 +65,7 @@ The following section describes all datapoints supported by the current version 
   Example: `$POV,Was,10.0*13`
 
 * `Wad`: Average wind direction (true) in `°`  
-  Example: `$POV,Wad,241*3E`
+  Example: `$POV,Wad,241*2C`
   
 ### Attitude
 
